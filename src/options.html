@@ -1,0 +1,42 @@
+<html>
+<head><title>Options</title></head>
+<script type="text/javascript">
+  function save_options() {
+    var channel = document.getElementById("channel");
+    var ikachan_url = document.getElementById("ikachan_url");
+    if( channel.value ) {
+      localStorage["channel"] = channel.value;
+    }
+    if( ikachan_url.value ) {
+      localStorage["ikachan_url"] = ikachan_url.value;
+    }
+  
+    var status = document.getElementById("status");
+    status.innerHTML = "Options Saved.";
+    setTimeout(function() {
+      status.innerHTML = "";
+    }, 750);
+  }
+
+  function restore_options() {
+    var strage_channel = localStorage["channel"];
+    var strage_ikachan_url = localStorage["ikachan_url"];
+  
+    if( strage_channel ){
+      var channel = document.getElementById("channel");
+      channel.value = strage_channel;
+    }
+    if( strage_ikachan_url ){
+      var ikachan_url = document.getElementById("ikachan_url");
+      ikachan_url.value = strage_ikachan_url;
+    }
+  }
+</script>
+<body onload="restore_options()">
+channel: <input id="channel" type="text" /><br />
+ikachan url: <input id="ikachan_url" type="text" />
+<br>
+<button onclick="save_options()">Save</button>
+<div id="status"></div>
+</body>
+</html>

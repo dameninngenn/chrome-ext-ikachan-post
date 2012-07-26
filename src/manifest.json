@@ -1,0 +1,19 @@
+{
+  "name": "Ikachan Post",
+  "version": "0.1.0",
+  "description": "send url to ikachan",
+  "browser_action": {
+    "default_icon": "ika128.png",
+    "popup": "popup.html"
+  },
+  "icons": {
+    "128": "ika128.png",
+    "48": "ika48.png"
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "options_page": "options.html"
+}
